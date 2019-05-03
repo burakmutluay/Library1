@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Library@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="Library">
+      <ObjectId>17048</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12975</ObjectId>
+    </database>
+    <database id="4" parent="1" name="dvdrental">
+      <ObjectId>16393</ObjectId>
+    </database>
+    <database id="5" parent="1" name="recommend">
+      <ObjectId>16720</ObjectId>
+    </database>
+    <database id="6" parent="1" name="OnlySchema">
+      <ObjectId>16724</ObjectId>
+    </database>
+    <schema id="7" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2019-01-18.14:49:57.796</IntrospectionTimestamp>
+      <IntrospectionStateNumber>944</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="8" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="information_schema">
+      <ObjectId>12685</ObjectId>
+    </schema>
+    <table id="13" parent="7" name="book">
+      <ObjectId>17049</ObjectId>
+      <StateNumber>944</StateNumber>
+    </table>
+    <table id="14" parent="7" name="issue">
+      <ObjectId>17076</ObjectId>
+      <StateNumber>944</StateNumber>
+    </table>
+    <table id="15" parent="7" name="members">
+      <ObjectId>17068</ObjectId>
+      <StateNumber>944</StateNumber>
+    </table>
+    <column id="16" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+    </column>
+    <column id="17" parent="13" name="title">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>906</StateNumber>
+    </column>
+    <column id="18" parent="13" name="author">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>907</StateNumber>
+    </column>
+    <column id="19" parent="13" name="publisher">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <StateNumber>908</StateNumber>
+    </column>
+    <column id="20" parent="13" name="isavailable">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>909</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+    </column>
+    <index id="21" parent="13" name="book_id_pk">
+      <ObjectId>17066</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="22" parent="13" name="book_id_pk">
+      <ObjectId>17067</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>book_id_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="14" name="bookid">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>944</StateNumber>
+    </column>
+    <column id="24" parent="14" name="memberid">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>944</StateNumber>
+    </column>
+    <column id="25" parent="14" name="issuetime">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>944</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="26" parent="14" name="renew_count">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>944</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="27" parent="14" name="issue_pkey">
+      <ObjectId>17081</ObjectId>
+      <ColNames>bookid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="14" name="issue_pkey">
+      <ObjectId>17082</ObjectId>
+      <ColNames>bookid</ColNames>
+      <UnderlyingIndexName>issue_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="14" name="issue_book_id_fk">
+      <ObjectId>17083</ObjectId>
+      <ColNames>bookid</ColNames>
+      <RefTableId>17049</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>book</RefTableName>
+      <RefKeyName>book_id_pk</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="30" parent="14" name="issue_members_memberid_fk">
+      <ObjectId>17088</ObjectId>
+      <ColNames>memberid</ColNames>
+      <RefTableId>17068</RefTableId>
+      <RefColPositions>2</RefColPositions>
+      <RefTableName>members</RefTableName>
+      <RefKeyName>members_pkey</RefKeyName>
+      <RefColNames>memberid</RefColNames>
+    </foreign-key>
+    <column id="31" parent="15" name="name">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>931</StateNumber>
+    </column>
+    <column id="32" parent="15" name="memberid">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>931</StateNumber>
+    </column>
+    <column id="33" parent="15" name="email">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>931</StateNumber>
+    </column>
+    <column id="34" parent="15" name="mobile">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>931</StateNumber>
+    </column>
+    <index id="35" parent="15" name="members_pkey">
+      <ObjectId>17074</ObjectId>
+      <ColNames>memberid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="15" name="members_pkey">
+      <ObjectId>17075</ObjectId>
+      <ColNames>memberid</ColNames>
+      <UnderlyingIndexName>members_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

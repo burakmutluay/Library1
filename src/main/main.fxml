@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../resources/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+   <children>
+      <AnchorPane fx:id="rootAnchor" stylesheets="@../resources/dark-theme.css">
+         <children>
+            <BorderPane fx:id="borderpane" prefHeight="498.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#menuCloseAction" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Add">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#loadAddBook" text="Add Book" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadAddMember" text="Add Member" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#loadBookTable" text="Book List" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadMemberTable" text="Member List" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleMenuFullscreen" text="Full Screen" />
+                           </items>
+                        </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </top>
+               <center>
+                  <AnchorPane stylesheets="@../resources/dark-theme.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXTabPane prefHeight="469.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab text="Book Issue">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox layoutX="163.0" layoutY="75.0" prefHeight="436.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox fx:id="book_info" alignment="CENTER" prefHeight="160.0" prefWidth="250.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" spacing="20.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <JFXTextField fx:id="bookIDInput" labelFloat="true" onAction="#loadBookInfo" promptText="Enter Book ID" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="159.0" prefWidth="550.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Book Name" textAlignment="CENTER" wrappingWidth="360.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                            <Text fx:id="bookAuthor" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Author" textAlignment="CENTER" wrappingWidth="360.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                            <Text fx:id="bookStatus" layoutX="11.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Book Status" textAlignment="CENTER" wrappingWidth="360.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="5.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="member_info" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="250.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER" spacing="20.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <JFXTextField fx:id="memberIDInput" labelFloat="true" onAction="#loadMemberInfo" promptText="Enter Member ID" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="139.0" prefWidth="550.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Member Name" textAlignment="CENTER" wrappingWidth="360.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                            <Text fx:id="memberContact" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Contact" textAlignment="CENTER" wrappingWidth="360.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Text>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" right="20.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="120.0" prefWidth="567.0">
+                                                   <children>
+                                                      <JFXButton buttonType="RAISED" onAction="#loadIssueOperation" prefHeight="35.0" prefWidth="120.0" ripplerFill="BLACK" text="Issue" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Renew / Submission">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <BorderPane layoutX="100.0" layoutY="87.0" prefHeight="436.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <top>
+                                                <JFXTextField fx:id="bookIDRS" labelFloat="true" onAction="#loadIssueInfo" prefHeight="47.0" prefWidth="367.0" promptText="Enter Book ID" BorderPane.alignment="CENTER">
+                                                   <BorderPane.margin>
+                                                      <Insets left="100.0" right="100.0" top="20.0" />
+                                                   </BorderPane.margin>
+                                                </JFXTextField>
+                                             </top>
+                                             <bottom>
+                                                <HBox alignment="CENTER" prefHeight="68.0" prefWidth="567.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <JFXButton fx:id="renewButton" disable="true" onAction="#loadRenew" prefHeight="30.0" prefWidth="110.0" text="Renew" />
+                                                      <JFXButton fx:id="submissionButton" disable="true" onAction="#loadSubmission" prefHeight="30.0" prefWidth="110.0" text="Submission">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </JFXButton>
+                                                   </children>
+                                                </HBox>
+                                             </bottom>
+                                             <center>
+                                                <HBox fx:id="submissionDataContainer" opacity="0.0" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="270.0" spacing="15.0" styleClass="submission-container">
+                                                         <HBox.margin>
+                                                            <Insets bottom="25.0" left="20.0" right="10.0" top="25.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <Text fx:id="memberNameHolder" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Member Name Holder" />
+                                                            <Text fx:id="memberPhoneHolder" layoutX="131.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Member Phone Holder" />
+                                                            <Text fx:id="memberEmailHolder" layoutX="131.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Member Email Holder" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="270.0" spacing="15.0" styleClass="submission-container">
+                                                         <HBox.margin>
+                                                            <Insets bottom="25.0" left="10.0" right="10.0" top="25.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <Text fx:id="bookNameHolder" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Book Name Holder" />
+                                                            <Text fx:id="bookAuthorHolder" layoutX="131.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Book Author Holder" />
+                                                            <Text fx:id="bookPublisherHolder" layoutX="131.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Book Publisher Holder" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="270.0" spacing="15.0" styleClass="submission-container">
+                                                         <HBox.margin>
+                                                            <Insets bottom="25.0" left="10.0" right="10.0" top="25.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <Text fx:id="issueDateHolder" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Issue Date Holder" />
+                                                            <Text fx:id="daysHolder" layoutX="131.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="No Of Days Holder" />
+                                                            <Text fx:id="fineHolder" layoutX="131.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="main-text" text="Fine Holder" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </center>
+                                          </BorderPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </JFXTabPane>
+                        <JFXHamburger fx:id="hamburger" fillWidth="false" layoutX="942.0" layoutY="24.0" prefHeight="26.0" prefWidth="42.0" styleClass="jfx-hamburger-icon" AnchorPane.bottomAnchor="419.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="24.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+               <right>
+                  <JFXDrawer fx:id="drawer" defaultDrawerSize="120.0" direction="RIGHT" minWidth="0.0" miniDrawerSize="0.0" prefHeight="469.0" prefWidth="0.0" resizeContent="true" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="469.0" prefWidth="135.0" styleClass="v-box-toolbar" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.toolbar.ToolbarController">
+<children>
+      <JFXButton contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAddMember" prefHeight="150.0" prefWidth="145.0" styleClass="toolbar-button" text="Add Member">
+         <graphic>
+            <FontAwesomeIconView glyphName="USER" size="25" />
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAddBook" prefHeight="150.0" prefWidth="145.0" styleClass="toolbar-button" text="Add Book">
+         <graphic>
+            <FontAwesomeIconView glyphName="BOOK" size="25" />
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#loadMemberTable" prefHeight="150.0" prefWidth="145.0" styleClass="toolbar-button" text="Member List">
+         <graphic>
+            <FontAwesomeIconView glyphName="LIST" size="25" />
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#loadBookTable" prefHeight="150.0" prefWidth="145.0" styleClass="toolbar-button" text="Book List">
+         <graphic>
+            <FontAwesomeIconView glyphName="LIST" size="25" />
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="88.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="150.0" prefWidth="145.0" styleClass="toolbar-button" text="Settings">
+         <graphic>
+            <FontAwesomeIconView glyphName="COG" size="25" />
+         </graphic>
+      </JFXButton>
+   </children>
+</VBox>

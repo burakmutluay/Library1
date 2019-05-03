@@ -1,0 +1,104 @@
+
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary: #FFFF8D;
+    -fx-primarytext: #B2B2B2;
+    -fx-red: #FF9000;
+}
+
+.root{
+    -fx-background-color: -fx-primary;
+}
+
+.glyph-icon{
+    -fx-fill: -fx-primarytext;
+}
+
+.button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+ /*login screen styling */
+
+.button:hover{
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+}
+
+.text-field{
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size: 13pt;
+    -jfx-focus-color: -fx-secondary;
+}
+
+.wrong-credentials{
+    -jfx-unfocus-color: -fx-red;
+    -jfx-focus-color: -fx-red;
+}
+/* main screen styling */
+
+/* Tab CSS Styling */
+
+.tab{
+    -fx-background-color: -fx-primary;
+    -fx-pref-width: 230;
+    -fx-pref-height: 50px;
+}
+
+.tab-header-background{
+    -fx-background-color: -fx-primary;
+}
+
+/*Menu Bar Styling */
+.menu-bar{
+    -fx-base: -fx-primary;
+    -fx-background-color: -fx-primary;
+}
+
+.context-menu{
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+
+/* JFXHamburger Styling */
+
+.jfx-hamburger-icon{
+    -fx-spacing: 7;
+}
+
+.jfx-hamburger-icon StackPane{
+    -fx-background-color: -fx-secondary;
+    -fx-background-radius: 5px;
+}
+
+/* Toolbar Buttons */
+
+.toolbar-button{
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+
+.toolbar-button:hover{
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primarytext;
+}
+
+.toolbar-button:hover .glyph-icon{
+    -fx-fill: -fx-primary;
+}
+
+/*Toolbar background*/
+
+.v-box-toolbar{
+    -fx-background-color: -fx-primary;
+}
+
+.main-text{
+    -fx-fill: -fx-secondary;
+    -fx-font-size: 14pt;
+}
+
+.submission-container{
+    -fx-background-color: derive(-fx-primary, 10%);
+}
